@@ -2,6 +2,10 @@
   "name": "node-interpret",
   "version": "1.0.0",
   "main": "index.js",
+  "bin": {
+    "fy": "src/cli.ts"
+  },
+  "files": ["dist/**/*.js"],
   "scripts": {
     "start": "ts-node-dev src/main.ts"
   },

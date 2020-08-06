@@ -1,9 +1,9 @@
-import * as md5 from 'md5'
+import md5 from 'md5'
 import * as querystring from 'querystring'
 import {appID, appSecret} from './private'
 import * as https from 'https'
 
-export const translate = (word) => {
+export const translate = (word: string) => {
 
     const salt = Math.random()
     const sign = md5(appID + word + salt + appSecret)
@@ -36,7 +36,7 @@ export const translate = (word) => {
     }
 
     const request = https.request(options, (response) => {
-        let chunks = []
+        let chunks: Buffer[] = []
         response.on('data', (chunk) => {
             chunks.push(chunk)
         })
